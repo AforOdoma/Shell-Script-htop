@@ -1,15 +1,15 @@
 #!/bin/bash
 
+package=htop
 
-command=htop
+sudo apt install $package >> packege_install_results.log
 
-if command -v  $command 
+if [ $? -eq 0 ]
 then
-    echo "$command is available, let's run it..."
+    echo "The installation of $package was successful."
+    echo "The new command is availablle here"
+    which $package
 else
-    echo "$command is NOT available, installing it...."
-    sudo apt update && sudo apt install -y $command
+    echo "$package failed to install." >> packege_install_failure
 fi
 
-$command
- 
