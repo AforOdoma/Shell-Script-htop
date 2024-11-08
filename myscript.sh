@@ -1,15 +1,11 @@
 #!/bin/bash
 
-package=htop
+myvar=1
 
-sudo apt install $package >> packege_install_results.log
+while [ $myvar -le 10 ]
+do
 
-if [ $? -eq 0 ]
-then
-    echo "The installation of $package was successful."
-    echo "The new command is availablle here"
-    which $package
-else
-    echo "$package failed to install." >> packege_install_failure
-fi
-
+    echo $myvar
+    myvar=$(( $myvar +1 ))
+    sleep 0.5
+done
